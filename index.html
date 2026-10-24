@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>উচ্চতর গণিত ১ম পত্র - অনুশীলনী ৩(G) (সরলরেখা)</title>
+    <title>উচ্চতর গণিত ১ম পত্র - অনুশীলনী ৩(G) (সকল প্রশ্ন ও সমাধান)</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,15 +37,13 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Hind Siliguri', sans-serif;
-        }
-        .katex { font-size: 1.08em; }
+        body { font-family: 'Hind Siliguri', sans-serif; }
+        .katex { font-size: 1.05em; }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200">
 
-    <!-- Header / Navbar -->
+    <!-- Header -->
     <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -53,7 +51,7 @@
                     <i data-lucide="calculator" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">অনুশীলনী ৩(G): সরলরেখা</h1>
+                    <h1 class="text-xl font-bold text-slate-900 dark:text-white leading-tight">অনুশীলনী ৩(G): সরলরেখা (সমগ্র প্রশ্ন সমাধান)</h1>
                     <p class="text-xs text-slate-500 dark:text-slate-400">উচ্চতর গণিত ১ম পত্র (HSC Math 1st Paper)</p>
                 </div>
             </div>
@@ -74,44 +72,41 @@
     <!-- Main Container -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-4 gap-6">
         
-        <!-- Sidebar Controls / Filters -->
+        <!-- Sidebar -->
         <aside class="lg:col-span-1 space-y-6">
             <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700 space-y-4">
                 <h2 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <i data-lucide="filter" class="w-4 h-4 text-brand-600"></i> ফিল্টার ও অনুসন্ধান
                 </h2>
                 
-                <!-- Search Box -->
                 <div class="relative">
-                    <input type="text" id="searchInput" placeholder="বোর্ড, টাইপ বা সূত্র খুঁজুন..." class="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                    <input type="text" id="searchInput" placeholder="বোর্ড, টাইপ বা প্রশ্ন খুঁজুন..." class="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-brand-500 focus:outline-none">
                     <i data-lucide="search" class="w-4 h-4 absolute left-3 top-2.5 text-slate-400"></i>
                 </div>
 
-                <!-- Type Selector -->
                 <div>
                     <label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2">টাইপ নির্বাচন করুন</label>
                     <div class="space-y-1.5" id="typeFilters">
                         <button data-type="all" class="type-btn active w-full text-left px-3 py-1.5 text-xs rounded-md font-medium transition bg-brand-600 text-white">সব প্রশ্ন (All Types)</button>
-                        <button data-type="I" class="type-btn w-full text-left px-3 py-1.5 text-xs rounded-md font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Type-I: রেখার অবস্থান ও মূলবিন্দু</button>
-                        <button data-type="II" class="type-btn w-full text-left px-3 py-1.5 text-xs rounded-md font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Type-II: বিন্দু থেকে রেখার লম্ব দূরত্ব</button>
+                        <button data-type="I" class="type-btn w-full text-left px-3 py-1.5 text-xs rounded-md font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Type-I: রেখার একই/বিপরীত পার্শ্ব</button>
+                        <button data-type="II" class="type-btn w-full text-left px-3 py-1.5 text-xs rounded-md font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Type-II: লম্ব দূরত্ব ও গুণফল</button>
                         <button data-type="III" class="type-btn w-full text-left px-3 py-1.5 text-xs rounded-md font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Type-III: সমান্তরাল রেখার দূরত্ব</button>
-                        <button data-type="IV" class="type-btn w-full text-left px-3 py-1.5 text-xs rounded-md font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Type-IV: মূলবিন্দু থেকে নির্দিষ্ট দূরত্বের রেখা</button>
+                        <button data-type="IV" class="type-btn w-full text-left px-3 py-1.5 text-xs rounded-md font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Type-IV: নির্দিষ্ট দূরত্বের রেখা</button>
                         <button data-type="V" class="type-btn w-full text-left px-3 py-1.5 text-xs rounded-md font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Type-V: কোণের সমদ্বিখণ্ডক</button>
-                        <button data-type="VI" class="type-btn w-full text-left px-3 py-1.5 text-xs rounded-md font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Type-VI: ত্রিভুজের কেন্দ্র ও লম্বকেন্দ্র</button>
+                        <button data-type="VI" class="type-btn w-full text-left px-3 py-1.5 text-xs rounded-md font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Type-VI: ত্রিভুজের কেন্দ্রসমূহ</button>
                     </div>
                 </div>
 
-                <!-- Stats -->
                 <div class="pt-3 border-t border-slate-200 dark:border-slate-700 flex justify-between text-xs text-slate-500 dark:text-slate-400">
                     <span>মোট প্রশ্ন: <strong id="totalCount" class="text-brand-600 dark:text-brand-400 font-semibold">0</strong></span>
-                    <span>বুকমার্ক করা: <strong id="bookmarkCount" class="text-amber-500 font-semibold">0</strong></span>
+                    <span>বুকমার্ক: <strong id="bookmarkCount" class="text-amber-500 font-semibold">0</strong></span>
                 </div>
             </div>
             
-            <!-- Formulas Card -->
+            <!-- Key Formulas -->
             <div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-200 dark:border-slate-700 space-y-3">
                 <h3 class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                    <i data-lucide="book-open" class="w-4 h-4 text-brand-600"></i> প্রয়োজনীয় সূত্রাবলী
+                    <i data-lucide="book-open" class="w-4 h-4 text-brand-600"></i> সূত্রাবলী
                 </h3>
                 <ul class="text-xs space-y-2 text-slate-600 dark:text-slate-300">
                     <li class="p-2 bg-slate-50 dark:bg-slate-900 rounded border border-slate-100 dark:border-slate-800">
@@ -127,230 +122,785 @@
             </div>
         </aside>
 
-        <!-- Problem List Display -->
-        <section class="lg:col-span-3 space-y-4" id="problemList">
-            <!-- Cards generated dynamically via JavaScript -->
-        </section>
+        <!-- Problem List -->
+        <section class="lg:col-span-3 space-y-4" id="problemList"></section>
 
     </main>
 
     <script>
-        // Database of problems with steps & SVG rendering definitions
         const problemsData = [
+            // ==================== TYPE I ====================
             {
-                id: "1_i",
-                type: "I",
-                no: "1. (i)",
+                id: "1_i", type: "I", no: "1. (i)",
                 question: "$(3, 4)$ ও $(1, -3)$ বিন্দু দুটি $4x - 5y + 7 = 0$ রেখার একই পার্শ্বে অথবা বিপরীত পার্শ্বে অবস্থিত কিনা তা নির্ণয় কর। মূলবিন্দু যে পার্শ্বে অবস্থিত সেই পার্শ্বে কোন বিন্দুটি অবস্থিত?",
                 boards: "ঢাকা বোর্ড-২০১৯ এর সৃজনশীল-৫(ক)",
                 solution: {
                     steps: [
-                        "প্রদত্ত রেখার সমীকরণ: $L(x, y) = 4x - 5y + 7 = 0$",
+                        "প্রদত্ত রেখা: $L(x, y) = 4x - 5y + 7 = 0$",
                         "মূলবিন্দু $(0, 0)$ বসিয়ে পাই: $L(0, 0) = 4(0) - 5(0) + 7 = 7 > 0$",
-                        "বিন্দু $(3, 4)$ বসিয়ে পাই: $L(3, 4) = 4(3) - 5(4) + 7 = 12 - 20 + 7 = -1 < 0$",
-                        "বিন্দু $(1, -3)$ বসিয়ে পাই: $L(1, -3) = 4(1) - 5(-3) + 7 = 4 + 15 + 7 = 26 > 0$",
-                        "যেহেতু $L(3, 4)$ ও $L(1, -3)$ এর মান বিপরীত চিহ্নযুক্ত, তাই বিন্দু দুটি **বিপরীত পার্শ্বে** অবস্থিত।",
+                        "বিন্দু $(3, 4)$ বসিয়ে পাই: $L(3, 4) = 4(3) - 5(4) + 7 = -1 < 0$",
+                        "বিন্দু $(1, -3)$ বসিয়ে পাই: $L(1, -3) = 4(1) - 5(-3) + 7 = 26 > 0$",
+                        "যেহেতু $L(3, 4)$ ও $L(1, -3)$ এর চিহ্ন বিপরীত, তাই বিন্দু দুটি **বিপরীত পার্শ্বে** অবস্থিত।",
                         "যেহেতু $L(0, 0)$ ও $L(1, -3)$ উভয়ই ধনাত্মক, তাই **মূলবিন্দু যে পার্শ্বে অবস্থিত $(1, -3)$ বিন্দুটি সেই পার্শ্বেই অবস্থিত।**"
                     ],
-                    svg: `
-                        <svg viewBox="-50 -50 300 250" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900">
-                            <!-- Grid / Axes -->
-                            <line x1="-30" y1="100" x2="220" y2="100" stroke="#94a3b8" stroke-width="1.5" />
-                            <line x1="100" y1="-30" x2="100" y2="200" stroke="#94a3b8" stroke-width="1.5" />
-                            <text x="210" y="90" fill="#64748b" font-size="12">x</text>
-                            <text x="110" y="-20" fill="#64748b" font-size="12">y</text>
-
-                            <!-- Line 4x - 5y + 7 = 0 -->
-                            <line x1="-10" y1="120" x2="210" y2="-10" stroke="#4f46e5" stroke-width="2.5" />
-                            <text x="120" y="15" fill="#4f46e5" font-size="11" font-weight="bold">4x - 5y + 7 = 0</text>
-
-                            <!-- Point (0,0) -->
-                            <circle cx="100" cy="100" r="4" fill="#000" />
-                            <text x="75" y="115" fill="#000" font-size="10" font-weight="bold">(0,0) [ + ]</text>
-
-                            <!-- Point (3,4) -->
-                            <circle cx="160" cy="40" r="5" fill="#ef4444" />
-                            <text x="165" y="35" fill="#ef4444" font-size="11" font-weight="bold">(3,4) [ - ]</text>
-
-                            <!-- Point (1,-3) -->
-                            <circle cx="120" cy="140" r="5" fill="#22c55e" />
-                            <text x="125" y="155" fill="#22c55e" font-size="11" font-weight="bold">(1,-3) [ + ]</text>
-                        </svg>
-                    `
+                    svg: `<svg viewBox="-30 -30 260 180" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="-10" y1="120" x2="210" y2="-10" stroke="#4f46e5" stroke-width="2.5"/><circle cx="100" cy="100" r="4" fill="#000"/><text x="75" y="115" font-size="10" font-weight="bold">(0,0) [+]</text><circle cx="160" cy="40" r="5" fill="#ef4444"/><text x="165" y="35" fill="#ef4444" font-size="11" font-weight="bold">(3,4) [-]</text><circle cx="120" cy="140" r="5" fill="#22c55e"/><text x="125" y="155" fill="#22c55e" font-size="11" font-weight="bold">(1,-3) [+]</text></svg>`
                 }
             },
             {
-                id: "2_i",
-                type: "II",
-                no: "2. (i)",
+                id: "1_ii", type: "I", no: "1. (ii)",
+                question: "দেখাও যে, $(-1, -2)$ এবং $(3, -4)$ বিন্দু দুটি $x + 4y + 6 = 0$ রেখার একই পার্শ্বে অবস্থিত।",
+                boards: "সাধারণ অনুশীলনী",
+                solution: {
+                    steps: [
+                        "প্রদত্ত রেখা: $L(x, y) = x + 4y + 6 = 0$",
+                        "$(-1, -2)$ বসিয়ে পাই: $L(-1, -2) = (-1) + 4(-2) + 6 = -3 < 0$",
+                        "$(3, -4)$ বসিয়ে পাই: $L(3, -4) = 3 + 4(-4) + 6 = -7 < 0$",
+                        "উভয় বিন্দুর জন্যই মান ঋণাত্মক ($<0$), অর্থাৎ একই চিহ্নযুক্ত। সুতরাং **বিন্দু দুটি রেখাটির একই পার্শ্বে অবস্থিত।** (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/><circle cx="60" cy="90" r="4" fill="#ef4444"/><circle cx="140" cy="70" r="4" fill="#ef4444"/></svg>`
+                }
+            },
+
+            // ==================== TYPE II ====================
+            {
+                id: "2_i", type: "II", no: "2. (i)",
                 question: "$(3, -2)$ বিন্দু হতে $4x - 3y - 10 = 0$ রেখার লম্ব দূরত্ব নির্ণয় কর।",
                 boards: "সাধারণ অনুশীলনী",
                 solution: {
                     steps: [
-                        "আমরা জানি, $(x_1, y_1)$ বিন্দু হতে $Ax + By + C = 0$ রেখার লম্ব দূরত্ব: $d = \\frac{|Ax_1 + By_1 + C|}{\\sqrt{A^2 + B^2}}$",
-                        "এখানে $(x_1, y_1) = (3, -2)$ এবং রেখার সমীকরণ $4x - 3y - 10 = 0$",
-                        "$d = \\frac{|4(3) - 3(-2) - 10|}{\\sqrt{4^2 + (-3)^2}}$",
-                        "$d = \\frac{|12 + 6 - 10|}{\\sqrt{16 + 9}} = \\frac{|8|}{\\sqrt{25}} = \\frac{8}{5} = 1.6 \\text{ একক}$"
+                        "লম্ব দূরত্ব $d = \\frac{|Ax_1 + By_1 + C|}{\\sqrt{A^2 + B^2}}$",
+                        "এখানে $(x_1, y_1) = (3, -2)$ এবং রেখা: $4x - 3y - 10 = 0$",
+                        "$d = \\frac{|4(3) - 3(-2) - 10|}{\\sqrt{4^2 + (-3)^2}} = \\frac{|12 + 6 - 10|}{5} = \\frac{8}{5}$ একক।"
                     ],
-                    svg: `
-                        <svg viewBox="-20 -20 240 180" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900">
-                            <!-- Line 4x - 3y - 10 = 0 -->
-                            <line x1="10" y1="150" x2="200" y2="30" stroke="#4f46e5" stroke-width="2.5" />
-                            <text x="120" y="40" fill="#4f46e5" font-size="11" font-weight="bold">4x - 3y - 10 = 0</text>
-
-                            <!-- Point P(3,-2) -->
-                            <circle cx="150" cy="130" r="5" fill="#ef4444" />
-                            <text x="160" y="140" fill="#ef4444" font-size="11" font-weight="bold">P(3, -2)</text>
-
-                            <!-- Perpendicular line -->
-                            <line x1="150" y1="130" x2="110" y2="87" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4" />
-                            <text x="135" y="105" fill="#ef4444" font-size="10" font-weight="bold">d = 8/5</text>
-                        </svg>
-                    `
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/><circle cx="140" cy="90" r="4" fill="#ef4444"/><line x1="140" y1="90" x2="110" y2="60" stroke="#ef4444" stroke-dasharray="3"/></svg>`
                 }
             },
             {
-                id: "3_iii",
-                type: "III",
-                no: "3. (iii)",
+                id: "2_ii", type: "II", no: "2. (ii)",
+                question: "মূলবিন্দু হতে $12x - 5y + 13 = 0$ রেখার লম্ব দূরত্ব নির্ণয় কর।",
+                boards: "সাধারণ অনুশীলনী",
+                solution: {
+                    steps: [
+                        "মূলবিন্দু $(0, 0)$ হতে লম্ব দূরত্ব $d = \\frac{|13|}{\\sqrt{12^2 + (-5)^2}} = \\frac{13}{\\sqrt{169}} = \\frac{13}{13} = 1$ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/><circle cx="100" cy="80" r="4" fill="#000"/><text x="105" y="95" font-size="10">(0,0)</text></svg>`
+                }
+            },
+            {
+                id: "2_iii", type: "II", no: "2. (iii)",
+                question: "মূলবিন্দু হতে $x \\sec\\theta - y \\csc\\theta = k$ এবং $x \\cos\\theta - y \\sin\\theta = k \\cos 2\\theta$ রেখাদ্বয়ের ওপর লম্ব দৈর্ঘ্য যথাক্রমে $p$ ও $p'$ হলে, দেখাও যে, $4p^2 + {p'}^2 = k^2$",
+                boards: "য: বো: ০৯; রা: বো: ০৪; চ: বো: ১১, ১৩",
+                solution: {
+                    steps: [
+                        "১ম রেখা: $x\\sin\\theta - y\\cos\\theta - k\\sin\\theta\\cos\\theta = 0 \\implies p = \\frac{k}{2}|\\sin 2\\theta| \\implies 4p^2 = k^2 \\sin^2 2\\theta$",
+                        "২য় রেখা: $p' = |k\\cos 2\\theta| \\implies {p'}^2 = k^2 \\cos^2 2\\theta$",
+                        "যোগ করে পাই: $4p^2 + {p'}^2 = k^2 (\\sin^2 2\\theta + \\cos^2 2\\theta) = k^2$ (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="90" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="30" x2="180" y2="90" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "2_iv", type: "II", no: "2. (iv)",
+                question: "$bx + ay = ab$ ও $ax - by = ab$ রেখাদ্বয়ের ছেদবিন্দু হতে $ax - by = 0$ রেখার লম্ব দূরত্ব কর এবং এই লম্ব রেখার সমীকরণ নির্ণয় কর।",
+                boards: "কুমিল্লা বোর্ড-২০২২ এর সৃজনশীল-২(ঘ)",
+                solution: {
+                    steps: [
+                        "রেখা দুটি সমাধান করে ছেদবিন্দু পাওয়া যায়: $\\left(\\frac{a(a+b)}{a^2+b^2}, \\frac{b(a-b)}{a^2+b^2}\\right)$",
+                        "লম্ব দূরত্ব $d = \\frac{ab}{\\sqrt{a^2+b^2}}$ একক।",
+                        "লম্ব রেখার সমীকরণ: $bx + ay = \\frac{ab(b-a)}{a^2+b^2}$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="100" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "2_v", type: "II", no: "2. (v)",
+                question: "$(6, 6)$ বিন্দু হতে $A(-2, -6)$ ও $C(-6, -2)$ বিন্দুদ্বয়ের সংযোগ রেখার দূরত্ব নির্ণয় কর।",
+                boards: "সাধারণ অনুশীলনী",
+                solution: {
+                    steps: [
+                        "$AC$ রেখার সমীকরণ: $x + y + 8 = 0$",
+                        "$(6, 6)$ হতে লম্ব দূরত্ব $d = \\frac{|6 + 6 + 8|}{\\sqrt{1^2 + 1^2}} = \\frac{20}{\\sqrt{2}} = 10\\sqrt{2}$ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="30" y1="100" x2="170" y2="20" stroke="#4f46e5" stroke-width="2"/><circle cx="140" cy="90" r="4" fill="#ef4444"/></svg>`
+                }
+            },
+            {
+                id: "3_i", type: "II", no: "3. (i)",
+                question: "প্রমাণ কর যে, $(\\pm c, 0)$ বিন্দু দুটি হতে $bx \\cos\\theta + ay \\sin\\theta = ab$ এর ওপর অঙ্কিত লম্বদ্বয়ের গুণফল $b^2$ হয় যখন $a^2 = b^2 + c^2$",
+                boards: "কু: বো: ০৯",
+                solution: {
+                    steps: [
+                        "লম্বদ্বয় $p_1 = \\frac{|bc\\cos\\theta - ab|}{\\sqrt{b^2\\cos^2\\theta + a^2\\sin^2\\theta}}$ এবং $p_2 = \\frac{|-bc\\cos\\theta - ab|}{\\sqrt{b^2\\cos^2\\theta + a^2\\sin^2\\theta}}$",
+                        "গুণফল $p_1 \\cdot p_2 = \\frac{a^2b^2 - b^2c^2\\cos^2\\theta}{b^2\\cos^2\\theta + a^2(1 - \\cos^2\\theta)} = \\frac{b^2(a^2 - c^2\\cos^2\\theta)}{a^2 - (a^2 - b^2)\\cos^2\\theta}$",
+                        "যেহেতু $a^2 - b^2 = c^2$, তাই $p_1 \\cdot p_2 = \\frac{b^2(a^2 - c^2\\cos^2\\theta)}{a^2 - c^2\\cos^2\\theta} = b^2$ (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><ellipse cx="100" cy="60" rx="80" ry="40" fill="none" stroke="#94a3b8"/><line x1="10" y1="90" x2="190" y2="30" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "3_ii", type: "II", no: "3. (ii)",
+                question: "দেখাও যে, $(\\pm \\sqrt{5}, 0)$ বিন্দুদ্বয় হতে $2x \\cos\\alpha - 3y \\sin\\alpha = 6$ সরলরেখার ওপর অঙ্কিত লম্বদ্বয়ের দৈর্ঘ্যের গুণফল $\\alpha$ বর্জিত।",
+                boards: "রা: বো: ০৭; কু: বো: ০৫",
+                solution: {
+                    steps: [
+                        "লম্বদ্বয়ের গুণফল $p_1 \\cdot p_2 = \\frac{|36 - 20\\cos^2\\alpha|}{4\\cos^2\\alpha + 9(1-\\cos^2\\alpha)} = \\frac{36 - 20\\cos^2\\alpha}{9 - 5\\cos^2\\alpha} = 4$",
+                        "মানটি ধ্রুবক এবং $\\alpha$ বর্জিত। (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "4_i", type: "II", no: "4. (i)",
+                question: "দেখাও যে, $(-\\frac{1}{2}, -2)$ বিন্দুটি $2x - 3y + 4 = 0$ এবং $6x + 4y - 7 = 0$ রেখাদ্বয় হতে সমদূরবর্তী।",
+                boards: "য: বো: ০৬; মাদ্রাসা বো: ১১",
+                solution: {
+                    steps: [
+                        "১ম রেখা হতে দূরত্ব $d_1 = \\frac{|2(-1/2) - 3(-2) + 4|}{\\sqrt{13}} = \\frac{9}{\\sqrt{13}}$",
+                        "২য় রেখা হতে দূরত্ব $d_2 = \\frac{|6(-1/2) + 4(-2) - 7|}{\\sqrt{52}} = \\frac{18}{2\\sqrt{13}} = \\frac{9}{\\sqrt{13}}$",
+                        "যেহেতু $d_1 = d_2$, তাই বিন্দুটি সমদূরবর্তী। (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="100" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "4_ii", type: "II", no: "4. (ii)",
+                question: "$(a, b)$ বিন্দুটি $3x - 4y + 1 = 0$ এবং $4x + 3y + 1 = 0$ রেখাদ্বয় হতে সমদূরবর্তী হলে দেখাও যে, $a + 7b = 0$ অথবা $7a - b + 2 = 0$",
+                boards: "রা: বো: ১০; চ: বো: ১৩; সি: বো: ০৮; য: বো: ১৫; মাদ্রাসা বো: ১৪",
+                solution: {
+                    steps: [
+                        "$\\frac{|3a - 4b + 1|}{5} = \\frac{|4a + 3b + 1|}{5} \\implies 3a - 4b + 1 = \\pm (4a + 3b + 1)$",
+                        "$(+)$ ধরে: $a + 7b = 0$",
+                        "$(-)$ ধরে: $7a - b + 2 = 0$ (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="100" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+
+            // ==================== TYPE III ====================
+            {
+                id: "5_i", type: "III", no: "5. (i)",
+                question: "$x - 2y - 1 = 0$ রেখার সমান্তরাল দিকে $2x + 3y - 14 = 0$ রেখা হতে $(3, 5)$ বিন্দুর দূরত্ব নির্ণয় কর।",
+                boards: "য: বো: ০৮",
+                solution: {
+                    steps: [
+                        "$(3, 5)$ বিন্দুগামী সমান্তরাল রেখা: $x - 2y + 7 = 0$",
+                        "ছেদবিন্দু নির্ণয়: $P(1, 4)$",
+                        "দূরত্ব $= \\sqrt{(3-1)^2 + (5-4)^2} = \\sqrt{5}$ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="40" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="80" x2="180" y2="60" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "5_ii", type: "III", no: "5. (ii)",
+                question: "$3x - 4y + 8 = 0$ রেখার সমান্তরালে $3x + y + 4 = 0$ রেখা থেকে $(1, 2)$ বিন্দুর দূরত্ব নির্ণয় কর।",
+                boards: "য: বো: ০৮",
+                solution: {
+                    steps: [
+                        "$(1, 2)$ বিন্দুগামী সমান্তরাল রেখা: $3x - 4y + 5 = 0$",
+                        "ছেদবিন্দু $\\left(-\\frac{21}{15}, \\frac{3}{15}\\right)$",
+                        "দূরত্ব $= 3$ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="40" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_i", type: "III", no: "6. (i)",
                 question: "$7x - 12y + 20 = 0$ এবং $7x - 12y + 13 = 0$ সমান্তরাল রেখাদ্বয়ের মধ্যবর্তী দূরত্ব নির্ণয় কর।",
                 boards: "সাধারণ অনুশীলনী",
                 solution: {
                     steps: [
-                        "সমান্তরাল রেখাদ্বয়ের সূত্র: $d = \\frac{|C_1 - C_2|}{\\sqrt{A^2 + B^2}}$",
-                        "এখানে $A = 7, B = -12, C_1 = 20, C_2 = 13$",
-                        "$d = \\frac{|20 - 13|}{\\sqrt{7^2 + (-12)^2}} = \\frac{7}{\\sqrt{49 + 144}} = \\frac{7}{\\sqrt{193}} \\text{ একক}$"
+                        "$d = \\frac{|20 - 13|}{\\sqrt{7^2 + (-12)^2}} = \\frac{7}{\\sqrt{193}}$ একক।"
                     ],
-                    svg: `
-                        <svg viewBox="0 0 240 140" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900">
-                            <!-- Line 1 -->
-                            <line x1="10" y1="50" x2="220" y2="20" stroke="#4f46e5" stroke-width="2" />
-                            <text x="20" y="40" fill="#4f46e5" font-size="10" font-weight="bold">7x - 12y + 20 = 0</text>
-
-                            <!-- Line 2 -->
-                            <line x1="10" y1="100" x2="220" y2="70" stroke="#0ea5e9" stroke-width="2" />
-                            <text x="20" y="115" fill="#0ea5e9" font-size="10" font-weight="bold">7x - 12y + 13 = 0</text>
-
-                            <!-- Distance Indicator -->
-                            <line x1="120" y1="35" x2="115" y2="85" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3" />
-                            <text x="125" y="65" fill="#ef4444" font-size="10" font-weight="bold">d = 7 / √193</text>
-                        </svg>
-                    `
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="50" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="80" x2="180" y2="60" stroke="#0ea5e9" stroke-width="2"/></svg>`
                 }
             },
             {
-                id: "4_i",
-                type: "IV",
-                no: "4. (i)",
+                id: "6_ii", type: "III", no: "6. (ii)",
+                question: "$5y = 7$ রেখার $2$ একক দূরবর্তী সমান্তরাল রেখার সমীকরণ নির্ণয় কর।",
+                boards: "সাধারণ অনুশীলনী",
+                solution: {
+                    steps: [
+                        "সমান্তরাল রেখা $5y + c = 0 \\implies \\frac{|c + 7|}{5} = 2 \\implies c = 3$ অথবা $c = -17$",
+                        "নির্ণেয় সমীকরণ: $5y + 3 = 0$ এবং $5y - 17 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="40" x2="180" y2="40" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="80" x2="180" y2="80" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_iii", type: "III", no: "6. (iii)",
+                question: "$5x + 9y = 27$ রেখার $4$ একক দূরবর্তী সমান্তরাল সরলরেখার সমীকরণ নির্ণয় কর।",
+                boards: "ঢাকা, দিনাজপুর, সিলেট ও যশোর বোর্ড-২০১৮ এর সৃজনশীল-১(খ)",
+                solution: {
+                    steps: [
+                        "সমান্তরাল রেখা $5x + 9y + k = 0 \\implies \\frac{|k + 27|}{\\sqrt{106}} = 4 \\implies k = -27 \\pm 4\\sqrt{106}$",
+                        "সমীকরণ: $5x + 9y - 27 \\pm 4\\sqrt{106} = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="50" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_iv", type: "III", no: "6. (iv)",
+                question: "$4x - 3y = 8$ রেখার সমান্তরাল এবং তা হতে $2$ একক দূরে অবস্থিত সরলরেখাদ্বয়ের সমীকরণ নির্ণয় কর।",
+                boards: "ঢা: বো: ১৩, ১০, ০৮; দি: বো: ১৪; চ: বো: ০৯; সি: বো: ০৭; য: বো: ১৬, ০৪; ব: বো: ১৫",
+                solution: {
+                    steps: [
+                        "$4x - 3y + c = 0 \\implies \\frac{|c + 8|}{5} = 2 \\implies c = 2$ অথবা $c = -18$",
+                        "নির্ণেয় সমীকরণ: $4x - 3y + 2 = 0$ এবং $4x - 3y - 18 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="50" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_v", type: "III", no: "6. (v)",
+                question: "$8x + 15y - 12 = 0$ সরলরেখার সমান্তরাল $2$ একক দূরবর্তী সরলরেখার মূলবিন্দু হতে লম্ব দূরত্ব নির্ণয় কর।",
+                boards: "ঢাকা বোর্ড-২০১৭ এর সৃজনশীল-৫(খ)",
+                solution: {
+                    steps: [
+                        "সমান্তরাল রেখাদ্বয়: $8x + 15y - 12 \\pm 34 = 0 \\implies 8x + 15y + 22 = 0$ এবং $8x + 15y - 46 = 0$",
+                        "মূলবিন্দু হতে লম্ব দূরত্ব যথাক্রমে $\\frac{22}{17}$ একক এবং $\\frac{46}{17}$ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="50" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_vi", type: "III", no: "6. (vi)",
+                question: "$(1, -2)$ বিন্দু হতে $7\\frac{1}{2}$ একক দূরবর্তী এবং $3x + 4y = 7$ রেখার সমান্তরাল রেখাসমূহের সমীকরণ নির্ণয় কর।",
+                boards: "ঢা: বো: ১৪; দি: বো: ১০; চ: বো: ১২; সি: বো: ১৩; য: বো: ১৩; ব: বো: ১৩; ম: বো: ১৪",
+                solution: {
+                    steps: [
+                        "সমান্তরাল রেখা $3x + 4y + k = 0 \\implies \\frac{|3(1) + 4(-2) + k|}{5} = \\frac{15}{2} \\implies k = \\frac{85}{2}$ অথবা $k = -\\frac{65}{2}$",
+                        "সমীকরণ: $6x + 8y + 85 = 0$ এবং $6x + 8y - 65 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="50" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_vii", type: "III", no: "6. (vii)",
+                question: "$A(4, 0)$ এবং $B(0, 3)$ বিন্দুগামী সরলরেখার ওপর $P, Q$ বিন্দুদ্বয় অবস্থিত হলে $PQ$ সরলরেখার সমান্তরাল এবং $2\\frac{2}{5}$ একক দূরবর্তী সরলরেখার সমীকরণ নির্ণয় কর।",
+                boards: "বরিশাল বোর্ড-২০১৯ এর সৃজনশীল-২(গ)",
+                solution: {
+                    steps: [
+                        "$PQ$ রেখা: $3x + 4y - 12 = 0$",
+                        "সমান্তরাল রেখা $3x + 4y + c = 0 \\implies \\frac{|c + 12|}{5} = \\frac{12}{5} \\implies c = 0$ অথবা $c = -24$",
+                        "সমীকরণ: $3x + 4y = 0$ এবং $3x + 4y - 24 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="50" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_viii", type: "III", no: "6. (viii)",
+                question: "$A(4, 0)$ ও $B(0, 3)$ বিন্দুগামী রেখা হতে $3$ একক দূরবর্তী সমান্তরাল রেখার সমীকরণ নির্ণয় কর।",
+                boards: "চট্টগ্রাম বোর্ড-২০১৭ এর সৃজনশীল-৩(ঘ)",
+                solution: {
+                    steps: [
+                        "$AB$ রেখা: $3x + 4y - 12 = 0 \\implies \\frac{|c + 12|}{5} = 3 \\implies c = 3$ অথবা $c = -27$",
+                        "সমীকরণ: $3x + 4y + 3 = 0$ এবং $3x + 4y - 27 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="50" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_ix", type: "III", no: "6. (ix)",
+                question: "একটি সরলরেখা অক্ষদ্বয় থেকে সমমানের যোগবোধক অংশ ছেদ করে এবং মূলবিন্দু হতে রেখাটির লম্ব দূরত্ব $4$ একক। রেখাটির সমীকরণ নির্ণয় কর।",
+                boards: "কু: বো: ১১; সি: বো: ১৩; ব: বো: ১১",
+                solution: {
+                    steps: [
+                        "রেখা: $x + y - a = 0 \\implies \\frac{|a|}{\\sqrt{2}} = 4 \\implies a = 4\\sqrt{2}$",
+                        "সমীকরণ: $x + y = 4\\sqrt{2}$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_x", type: "III", no: "6. (x)",
+                question: "$2x - 3y + k = 0$ এবং $2x - 3y = 0$ রেখাদ্বয়ের মধ্যবর্তী দূরত্ব $2\\sqrt{13}$ একক হলে $k$ এর মান নির্ণয় কর।",
+                boards: "রাজশাহী বোর্ড-২০২২ এর সৃজনশীল-৩(ক)",
+                solution: {
+                    steps: [
+                        "$d = \\frac{|k|}{\\sqrt{13}} = 2\\sqrt{13} \\implies |k| = 26 \\implies k = \\pm 26$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="50" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="80" x2="180" y2="60" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_xi", type: "III", no: "6. (xi)",
+                question: "$4x - 3y + 2 = 0$ এবং $8x - 6y - 9 = 0$ সমান্তরাল রেখাদ্বয়ের মধ্যবর্তী দূরত্ব নির্ণয় কর।",
+                boards: "রাজশাহী বোর্ড-২০২১ এর সৃজনশীল-৪(ক)",
+                solution: {
+                    steps: [
+                        "১ম রেখা: $8x - 6y + 4 = 0$",
+                        "দূরত্ব $d = \\frac{|4 - (-9)|}{\\sqrt{8^2 + (-6)^2}} = \\frac{13}{10} = 1.3$ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="50" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="80" x2="180" y2="60" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_xii", type: "III", no: "6. (xii)",
+                question: "$(2, 0)$ ও $\\left(0, \\frac{8}{3}\\right)$ বিন্দুগামী রেখার সমান্তরাল ও তা হতে $2$ একক দূরে অবস্থিত সরলরেখাগুলোর সমীকরণ নির্ণয় কর।",
+                boards: "কুমিল্লা বোর্ড-২০২১ এর সৃজনশীল-৪(ঘ)",
+                solution: {
+                    steps: [
+                        "বিন্দুগামী রেখা: $4x + 3y - 8 = 0$",
+                        "সমান্তরাল রেখা: $4x + 3y + c = 0 \\implies \\frac{|c + 8|}{5} = 2 \\implies c = 2$ অথবা $c = -18$",
+                        "সমীকরণ: $4x + 3y + 2 = 0$ এবং $4x + 3y - 18 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="50" x2="180" y2="30" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "6_xiii", type: "III", no: "6. (xiii)",
+                question: "মূলবিন্দুগামী এবং $y$-অক্ষের সাথে ঘড়ির কাটার বিপরীত দিকে $45^\\circ$ কোণ উৎপন্ন করে এরুপ রেখার সমান্তরাল এবং এটি হতে $6\\sqrt{2}$ একক দূরবর্তী সরলরেখার সমীকরণ নির্ণয় কর।",
+                boards: "সিলেট বোর্ড-২০২৩ এর সৃজনশীল-৩(ঘ)",
+                solution: {
+                    steps: [
+                        "মূলবিন্দুগামী রেখা: $x - y = 0$",
+                        "সমান্তরাল রেখা: $x - y + c = 0 \\implies \\frac{|c|}{\\sqrt{2}} = 6\\sqrt{2} \\implies c = \\pm 12$",
+                        "সমীকরণ: $x - y \\pm 12 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+
+            // ==================== TYPE IV ====================
+            {
+                id: "7_i", type: "IV", no: "7. (i)",
                 question: "এরুপ সরলরেখার সমীকরণ নির্ণয় কর যা $(3, 6)$ বিন্দুগামী এবং মূলবিন্দু হতে যার দূরত্ব $6$ একক।",
                 boards: "সাধারণ অনুশীলনী",
                 solution: {
                     steps: [
-                        "ধরি $(3, 6)$ বিন্দুগামী রেখার সমীকরণ: $y - 6 = m(x - 3) \\implies mx - y + (6 - 3m) = 0$",
-                        "মূলবিন্দু $(0, 0)$ থেকে এর দূরত্ব $= 6$ একক:",
-                        "$\\frac{|m(0) - 0 + (6 - 3m)|}{\\sqrt{m^2 + 1}} = 6 \\implies \\frac{|6 - 3m|}{\\sqrt{m^2 + 1}} = 6$",
-                        "বর্গ করে পাই: $(6 - 3m)^2 = 36(m^2 + 1) \\implies 36 - 36m + 9m^2 = 36m^2 + 36$",
-                        "$27m^2 + 36m = 0 \\implies 9m(3m + 4) = 0$",
-                        "$m = 0$ অথবা $m = -\\frac{4}{3}$",
-                        "$m = 0$ হলে রেখা: $y = 6$",
-                        "$m = -\\frac{4}{3}$ হলে রেখা: $4x + 3y - 30 = 0$"
+                        "$(3, 6)$ বিন্দুগামী রেখা: $mx - y + (6 - 3m) = 0$",
+                        "$\\frac{|6 - 3m|}{\\sqrt{m^2 + 1}} = 6 \\implies 27m^2 + 36m = 0 \\implies m = 0$ অথবা $m = -\\frac{4}{3}$",
+                        "সমীকরণ: $y = 6$ এবং $4x + 3y - 30 = 0$"
                     ],
-                    svg: `
-                        <svg viewBox="-20 -20 220 180" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900">
-                            <!-- Axes -->
-                            <line x1="0" y1="140" x2="190" y2="140" stroke="#94a3b8" />
-                            <line x1="20" y1="0" x2="20" y2="160" stroke="#94a3b8" />
-
-                            <!-- Point (3,6) -->
-                            <circle cx="80" cy="40" r="4" fill="#000" />
-                            <text x="85" y="35" fill="#000" font-size="10" font-weight="bold">(3,6)</text>
-
-                            <!-- Tangent 1: y = 6 -->
-                            <line x1="0" y1="40" x2="180" y2="40" stroke="#4f46e5" stroke-width="2" />
-                            <text x="130" y="32" fill="#4f46e5" font-size="10">y = 6</text>
-
-                            <!-- Tangent 2: 4x + 3y - 30 = 0 -->
-                            <line x1="30" y1="10" x2="160" y2="150" stroke="#ef4444" stroke-width="2" />
-                            <text x="100" y="120" fill="#ef4444" font-size="10">4x+3y-30=0</text>
-                        </svg>
-                    `
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="40" x2="180" y2="40" stroke="#4f46e5" stroke-width="2"/><line x1="30" y1="10" x2="160" y2="110" stroke="#ef4444" stroke-width="2"/></svg>`
                 }
             },
             {
-                id: "5_iv",
-                type: "V",
-                no: "5. (iv)",
+                id: "7_ii", type: "IV", no: "7. (ii)",
+                question: "এমন সরলরেখার সমীকরণ কর যার ঢাল $-1$ এবং মূলবিন্দু হতে যার দূরত্ব $4$ একক।",
+                boards: "কু: বো: ১২, ০৬; সি: বো: ০৯; মাদ্রাসা বো: ১২",
+                solution: {
+                    steps: [
+                        "রেখা: $x + y - c = 0 \\implies \\frac{|c|}{\\sqrt{2}} = 4 \\implies c = \\pm 4\\sqrt{2}$",
+                        "সমীকরণ: $x + y \\pm 4\\sqrt{2} = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "7_iii", type: "IV", no: "7. (iii)",
+                question: "$x$-অক্ষের ধনাত্মক দিকের সাথে $45^\\circ$ কোণ উৎপন্ন করে এবং $(5, 4)$ বিন্দু হতে $7$ একক দূরত্বে অবস্থিত রেখাসমূহের সমীকরণ নির্ণয় কর।",
+                boards: "সাধারণ অনুশীলনী",
+                solution: {
+                    steps: [
+                        "ঢাল $m = \\tan 45^\\circ = 1 \\implies$ রেখা: $x - y + c = 0$",
+                        "$\\frac{|5 - 4 + c|}{\\sqrt{2}} = 7 \\implies c = -1 \\pm 7\\sqrt{2}$",
+                        "সমীকরণ: $x - y - 1 \\pm 7\\sqrt{2} = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "8_i", type: "IV", no: "8. (i)",
+                question: "$x$-অক্ষের ওপর অবস্থিত যে বিন্দুগুলো হতে $3x + 4y = 15$ রেখার ওপর অঙ্কিত লম্ব দূরত্ব $6$ একক, তাদের স্থানাঙ্ক নির্ণয় কর।",
+                boards: "সাধারণ অনুশীলনী",
+                solution: {
+                    steps: [
+                        "বিন্দু $(x_1, 0) \\implies \\frac{|3x_1 - 15|}{5} = 6 \\implies |3x_1 - 15| = 30$",
+                        "$x_1 = 15$ অথবা $x_1 = -5$",
+                        "নির্ণেয় বিন্দুসমূহ: $(15, 0)$ এবং $(-5, 0)$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/><circle cx="50" cy="100" r="4" fill="#ef4444"/><circle cx="150" cy="100" r="4" fill="#22c55e"/></svg>`
+                }
+            },
+            {
+                id: "8_ii", type: "IV", no: "8. (ii)",
+                question: "$y$-অক্ষের ওপর অবস্থিত যে বিন্দুগুলো হতে $3y = 4x - 10$ রেখার লম্ব দূরত্ব $4$ একক তাদের স্থানাঙ্ক নির্ণয় কর।",
+                boards: "চ: বো: ১৪, ১০",
+                solution: {
+                    steps: [
+                        "বিন্দু $(0, y_1) \\implies \\frac{|-3y_1 - 10|}{5} = 4 \\implies |-3y_1 - 10| = 20$",
+                        "$y_1 = -10$ অথবা $y_1 = \\frac{10}{3}$",
+                        "নির্ণেয় বিন্দুসমূহ: $(0, -10)$ এবং $\\left(0, \\frac{10}{3}\\right)$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "8_iii", type: "IV", no: "8. (iii)",
+                question: "$12x - 5y + 26 = 0$ রেখা হতে $2$ একক দূরবর্তী এবং $x + 5y = 13$ রেখার ওপর অবস্থিত বিন্দুসমূহের স্থানাঙ্ক নির্ণয় কর।",
+                boards: "বরিশাল বোর্ড-২০২৩ এর সৃজনশীল-২(খ)",
+                solution: {
+                    steps: [
+                        "বিন্দু $(13 - 5t, t) \\implies \\frac{|182 - 65t|}{13} = 2 \\implies t = \\frac{12}{5}$ অথবা $t = \\frac{16}{5}$",
+                        "নির্ণেয় বিন্দুসমূহ: $\\left(1, \\frac{12}{5}\\right)$ এবং $\\left(-3, \\frac{16}{5}\\right)$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="100" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+
+            // ==================== TYPE V ====================
+            {
+                id: "9_i", type: "V", no: "9. (i)",
                 question: "$12x + 5y = 4$ এবং $3x + 4y + 7 = 0$ রেখাদ্বয়ের অন্তর্ভুক্ত কোণের সমদ্বিখণ্ডকসমূহের সমীকরণ নির্ণয় কর।",
                 boards: "মাদ্রাসা বো: ১৩",
                 solution: {
                     steps: [
-                        "সমদ্বিখণ্ডকের সমীকরণ: $\\frac{12x + 5y - 4}{\\sqrt{12^2 + 5^2}} = \\pm \\frac{3x + 4y + 7}{\\sqrt{3^2 + 4^2}}$",
                         "$\\frac{12x + 5y - 4}{13} = \\pm \\frac{3x + 4y + 7}{5}$",
-                        "$(+)$ চিহ্ন নিয়ে: $5(12x + 5y - 4) = 13(3x + 4y + 7) \\implies 21x - 27y - 111 = 0 \\implies 7x - 9y - 37 = 0$",
-                        "$(-)$ চিহ্ন নিয়ে: $5(12x + 5y - 4) = -13(3x + 4y + 7) \\implies 99x + 77y + 71 = 0$"
+                        "$(+)$ চিহ্ন নিয়ে: $7x - 9y - 37 = 0$",
+                        "$(-)$ চিহ্ন নিয়ে: $99x + 77y + 71 = 0$"
                     ],
-                    svg: `
-                        <svg viewBox="0 0 200 160" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900">
-                            <!-- Two intersecting lines -->
-                            <line x1="20" y1="20" x2="180" y2="140" stroke="#4f46e5" stroke-width="2" />
-                            <line x1="20" y1="140" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2" />
-
-                            <!-- Bisectors -->
-                            <line x1="100" y1="10" x2="100" y2="150" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3" />
-                            <line x1="10" y1="80" x2="190" y2="80" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3" />
-                        </svg>
-                    `
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="100" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2"/></svg>`
                 }
             },
             {
-                id: "6_ii",
-                type: "VI",
-                no: "6. (ii)",
+                id: "9_ii", type: "V", no: "9. (ii)",
+                question: "$4y - 3x = 3$ এবং $3y - 4x = 5$ রেখাদ্বয়ের অন্তর্ভুক্ত স্থূলকোণের সমদ্বিখণ্ডক রেখার সমীকরণ নির্ণয় কর।",
+                boards: "চুয়েট: ১৯-২০; সি: বো: ১৫; দি: বো: ০৯",
+                solution: {
+                    steps: [
+                        "$A_1 A_2 + B_1 B_2 = 24 > 0 \\implies$ স্থূলকোণের জন্য $(+)$ চিহ্ন নিতে হবে:",
+                        "$\\frac{3x - 4y + 3}{5} = + \\frac{4x - 3y + 5}{5} \\implies x + y + 2 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="100" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_iii", type: "V", no: "9. (iii)",
+                question: "$3x + 2y - 6 = 0$ এবং $2x + 3y - 8 = 0$ রেখাদ্বয়ের অন্তর্গত স্থূলকোণের সমদ্বিখণ্ডক রেখা $x$-অক্ষের ধনাত্মক দিকের সাথে যে কোণ উৎপন্ন করে তা নির্ণয় কর।",
+                boards: "রাজশাহী, কুমিল্লা, চট্টগ্রাম ও বরিশাল বোর্ড-২০১৮ এর সৃজনশীল-২(গ)",
+                solution: {
+                    steps: [
+                        "স্থূলকোণের সমদ্বিখণ্ডক: $x - y + 2 = 0 \\implies y = x + 2$",
+                        "ঢাল $m = 1 \\implies \\tan\\theta = 1 \\implies \\theta = 45^\\circ$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_iv", type: "V", no: "9. (iv)",
+                question: "$3x - 4y + 12 = 0$ এবং $8x + 15y - 12 = 0$ রেখাদ্বয়ের অন্তর্গত কোণের যে সমদ্বিখণ্ডক $x$-অক্ষের সাথে সূক্ষ্মকোণ উৎপন্ন করে তার ঢাল নির্ণয় কর।",
+                boards: "ঢাকা বোর্ড-২০১৭ এর সৃজনশীল-৩(গ)",
+                solution: {
+                    steps: [
+                        "সমদ্বিখণ্ডকদ্বয়: $11x - 143y + 264 = 0 \\implies m_1 = \\frac{1}{13} > 0$ (সূক্ষ্মকোণ)",
+                        "এবং $91x + 7y + 144 = 0 \\implies m_2 = -13 < 0$",
+                        "নির্ণেয় ঢাল $= \\frac{1}{13}$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_v", type: "V", no: "9. (v)",
+                question: "$15x - 8y + 3 = 0$ ও $4x + 3y + 5 = 0$ রেখাদ্বয়ের মধ্যবর্তী কোণের সমদ্বিখণ্ডকদ্বয় $y$-অক্ষকে $P$ ও $Q$ বিন্দুতে ছেদ করে। $PQ$ এর দৈর্ঘ্য নির্ণয় কর।",
+                boards: "সাধারণ অনুশীলনী",
+                solution: {
+                    steps: [
+                        "সমদ্বিখণ্ডকদ্বয় $y$-অক্ষকে ছেদ করে $P\\left(0, -\\frac{10}{13}\\right)$ ও $Q\\left(0, -\\frac{100}{11}\\right)$ বিন্দুতে।",
+                        "$PQ = \\left|-\\frac{10}{13} - \\left(-\\frac{100}{11}\\right)\\right| = \\frac{1190}{143}$ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_vi", type: "V", no: "9. (vi)",
+                question: "দেখাও যে, $(0, 1)$ বিন্দুটি $12x - 5y + 1 = 0$ ও $5x + 12y - 16 = 0$ রেখাদ্বয়ের অন্তর্ভুক্ত কোণদ্বয়ের একটি সমদ্বিখণ্ডকের ওপর অবস্থিত।",
+                boards: "ঢা: বো: ০৫; রা: বো: ১৬, ০৬; য: বো: ১১; দি: বো: ১৩; চ: বো: ০৮; কু: বো: ১৩, ১১, ০৩; সি: বো: ১৪, ০৪",
+                solution: {
+                    steps: [
+                        "$d_1 = \\frac{|12(0) - 5(1) + 1|}{13} = \\frac{4}{13}$",
+                        "$d_2 = \\frac{|5(0) + 12(1) - 16|}{13} = \\frac{4}{13}$",
+                        "যেহেতু $d_1 = d_2$, তাই বিন্দুটি সমদ্বিখণ্ডকের ওপর অবস্থিত। (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="100" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_vii", type: "V", no: "9. (vii)",
+                question: "$2x + y + 3 = 0$ এবং $3x - 4y + 7 = 0$ রেখাদ্বয়ের অন্তর্ভুক্ত সূক্ষ্মকোণের সমদ্বিখণ্ডকের সমীকরণ নির্ণয় কর।",
+                boards: "কু: বো: ০৪; সি: বো: ১০",
+                solution: {
+                    steps: [
+                        "$A_1 A_2 + B_1 B_2 = 2 > 0 \\implies$ সূক্ষ্মকোণের সমদ্বিখণ্ডকের জন্য $(-)$ চিহ্ন নিতে হবে:",
+                        "$\\frac{2x + y + 3}{\\sqrt{5}} = -\\frac{3x - 4y + 7}{5} \\implies (\\sqrt{5}+3)x + (2\\sqrt{5}-4)y + (3\\sqrt{5}+7) = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_viii", type: "V", no: "9. (viii)",
+                question: "$A(3, 0), B(0, 2)$ এবং $P(3, \\sqrt{3})$ তিনটি বিন্দু। $PA$ এবং $AB$ সরলরেখার মধ্যবর্তী কোণের সমদ্বিখণ্ডকদ্বয়ের সমীকরণ নির্ণয় কর।",
+                boards: "ঢাকা বোর্ড-২০১৯ এর সৃজনশীল-৫(গ)",
+                solution: {
+                    steps: [
+                        "$PA$ রেখা: $x - 3 = 0$, $AB$ রেখা: $2x + 3y - 6 = 0$",
+                        "সমদ্বিখণ্ডকদ্বয়: $(\\sqrt{13} \\mp 2)x \\mp 3y - 3\\sqrt{13} \\pm 6 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_ix", type: "V", no: "9. (ix)",
+                question: "$y = -\\frac{3}{2}x + 3$ রেখা এবং প্রদত্ত রেখার ওপর লম্ব ও মূলবিন্দুগামী রেখার অন্তর্ভুক্ত কোণের সমদ্বিখণ্ডকদ্বয়ের সমীকরণ নির্ণয় কর।",
+                boards: "চট্টগ্রাম বোর্ড-২০১৯ এর সৃজনশীল-৫(গ)",
+                solution: {
+                    steps: [
+                        "প্রদত্ত রেখা: $3x + 2y - 6 = 0$, লম্ব রেখা: $2x - 3y = 0$",
+                        "সমদ্বিখণ্ডকদ্বয়: $x + 5y - 6 = 0$ এবং $5x - y - 6 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="100" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_x", type: "V", no: "9. (x)",
+                question: "$5x + 12y = 15$ রেখা এবং অক্ষ দুটি দ্বারা গঠিত ত্রিভুজের কোণ তিনটির বহির্দ্বিখণ্ডকের সমীকরণ নির্ণয় কর।",
+                boards: "সাধারণ অনুশীলনী",
+                solution: {
+                    steps: [
+                        "অক্ষদ্বয় $x = 0, y = 0$ এবং রেখা $5x + 12y - 15 = 0$",
+                        "বহির্দ্বিখণ্ডক সমীকরণসমূহ: $x + y = 0$, $5x + 12y - 15 = \\pm 13x$ ইত্যাদি।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><polygon points="20,100 180,100 20,20" fill="none" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xi", type: "V", no: "9. (xi)",
+                question: "$2x - y + 2 = 0$ ও $x - 2y + 3 = 0$ রেখাদ্বয়ের মধ্যবর্তী সূক্ষ্মকোণের সমদ্বিখণ্ডক অক্ষদ্বয়ের সাথে যে ত্রিভুজ গঠন করে তার ক্ষেত্রফল নির্ণয় কর।",
+                boards: "রাজশাহী বোর্ড-২০১৭ এর সৃজনশীল-২(ঘ)",
+                solution: {
+                    steps: [
+                        "সূক্ষ্মকোণের সমদ্বিখণ্ডক: $3x - 3y + 5 = 0 \\implies \\frac{x}{-5/3} + \\frac{y}{5/3} = 1$",
+                        "ক্ষেত্রফল $= \\frac{1}{2} \\left|-\\frac{5}{3} \\cdot \\frac{5}{3}\\right| = \\frac{25}{18}$ বর্গ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xii", type: "V", no: "9. (xii)",
+                question: "$3x + 4y - 1 = 0$ ও $5x - 12y + 3 = 0$ সরলরেখাদ্বয়ের মধ্যবর্তী স্থূলকোণের সমদ্বিখণ্ডকের সমীকরণ নির্ণয় কর।",
+                boards: "দিনাজপুর বোর্ড-২০২২ এর সৃজনশীল-৩(ঘ)",
+                solution: {
+                    steps: [
+                        "$A_1 A_2 + B_1 B_2 = -33 < 0 \\implies$ স্থূলকোণের সমদ্বিখণ্ডকের জন্য $(-)$ চিহ্ন নিতে হবে:",
+                        "$\\frac{3x + 4y - 1}{5} = -\\frac{5x - 12y + 3}{13} \\implies 32x - 4y + 1 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xiii", type: "V", no: "9. (xiii)",
+                question: "$A(3, 5), B(2, 1), C(6, 3)$ এবং $EB \\perp BC$ হলে $\\angle EBC$ এর সমদ্বিখণ্ডক রেখার সমীকরণ নির্ণয় কর।",
+                boards: "যশোর বোর্ড-২০১৭ এর সৃজনশীল-৩(ঘ)",
+                solution: {
+                    steps: [
+                        "$BC$ রেখা: $x - 2y = 0$, $EB$ রেখা: $2x + y - 5 = 0$",
+                        "সমদ্বিখণ্ডক: $3x - y - 5 = 0$ অথবা $x + 3y - 5 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xiv", type: "V", no: "9. (xiv)",
+                question: "দেখাও যে, $A(-2, -6), B(6, 6)$ ও $C(-6, -2)$ বিন্দুত্রয় দ্বারা গঠিত $\\angle ABC$ এর সমদ্বিখণ্ডকদ্বয় পরস্পর লম্ব হবে।",
+                boards: "কুমিল্লা বোর্ড-২০২২ এর সৃজনশীল-৫(ঘ)",
+                solution: {
+                    steps: [
+                        "যেকোনো দুই সরলরেখার কোণের সমদ্বিখণ্ডকদ্বয়ের মধ্যবর্তী কোণ সর্বদাই $90^\\circ$, অর্থাৎ তারা **পরস্পর লম্ব।** (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="100" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xv", type: "V", no: "9. (xv)",
+                question: "দেখাও যে, $-\\frac{4}{3}$ ঢালবিশিষ্ট মূলবিন্দুগামী রেখা ও $x$-অক্ষের মধ্যবর্তী কোণের সমদ্বিখণ্ডকদ্বয় পরস্পর লম্ব।",
+                boards: "চট্টগ্রাম বোর্ড-২০২২ এর সৃজনশীল-৫(ঘ)",
+                solution: {
+                    steps: [
+                        "রেখা: $4x + 3y = 0$, $x$-অক্ষ: $y = 0$",
+                        "সমদ্বিখণ্ডকদ্বয়: $2x - y = 0$ (ঢাল $2$) এবং $x + 2y = 0$ (ঢাল $-\\frac{1}{2}$)",
+                        "ঢালদ্বয়ের গুণফল $= 2 \\times \\left(-\\frac{1}{2}\\right) = -1 \\implies$ **পরস্পর লম্ব।** (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="100" x2="180" y2="20" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xvi", type: "V", no: "9. (xvi)",
+                question: "$A(3, 0), C(2, 1)$ ও $B(0, 4)$ তিনটি বিন্দু হলে $\\angle ACB$ এর সমদ্বিখণ্ডকের সমীকরণ নির্ণয় কর।",
+                boards: "সিলেট বোর্ড-২০২২ এর সৃজনশীল-৩(ঘ)",
+                solution: {
+                    steps: [
+                        "$CA$ রেখা: $x + y - 3 = 0$, $CB$ রেখা: $3x + 2y - 8 = 0$",
+                        "সমদ্বিখণ্ডক: $\\frac{x + y - 3}{\\sqrt{2}} = \\pm \\frac{3x + 2y - 8}{\\sqrt{13}}$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xvii", type: "V", no: "9. (xvii)",
+                question: "$3x + 8y - 24 = 0$ ও $8x + 3y + 48 = 0$ রেখাদ্বয়ের অন্তর্ভুক্ত স্থূলকোণের সমদ্বিখণ্ডক দ্বারা $y$-অক্ষের খণ্ডিতাংশের দৈর্ঘ্য নির্ণয় কর।",
+                boards: "ময়মনসিংহ বোর্ড-২০২১ এর সৃজনশীল-৪(ঘ)",
+                solution: {
+                    steps: [
+                        "স্থূলকোণের সমদ্বিখণ্ডক: $5x - 5y + 72 = 0 \\implies \\frac{x}{-72/5} + \\frac{y}{72/5} = 1$",
+                        "$y$-অক্ষের খণ্ডিতাংশের দৈর্ঘ্য $= \\frac{72}{5} = 14.4$ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xviii", type: "V", no: "9. (xviii)",
+                question: "$4x - 4y + 6 = 0$ ও $x + 7y - 3 = 0$ সরলরেখাদ্বয়ের মধ্যবর্তী সূক্ষ্মকোণের সমদ্বিখণ্ডকের সমীকরণ নির্ণয় কর।",
+                boards: "চট্টগ্রাম বোর্ড-২০২১ এর সৃজনশীল-৩(ঘ)",
+                solution: {
+                    steps: [
+                        "সূক্ষ্মকোণের সমদ্বিখণ্ডক: $5(2x - 2y + 3) = 2(x + 7y - 3) \\implies 8x - 24y + 21 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xix", type: "V", no: "9. (xix)",
+                question: "$4x - 3y + 1 = 0$ এবং $3x + 4y + 8 = 0$ রেখাদ্বয়ের মধ্যবর্তী সূক্ষ্মকোণ অক্ষদ্বয়ের সাথে যে ত্রিভুজ উৎপন্ন করে, তার ক্ষেত্রফল নির্ণয় কর।",
+                boards: "দিনাজপুর বোর্ড-২০২৩ এর সৃজনশীল-২(ঘ)",
+                solution: {
+                    steps: [
+                        "সমদ্বিখণ্ডক: $7x + y + 9 = 0 \\implies \\frac{x}{-9/7} + \\frac{y}{-9} = 1$",
+                        "ক্ষেত্রফল $= \\frac{1}{2} \\cdot \\left|-\\frac{9}{7}\\right| \\cdot |-9| = \\frac{81}{14}$ বর্গ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xx", type: "V", no: "9. (xx)",
+                question: "দেখাও যে, $4x - 3y + 12 = 0$ ও $3x - 4y = 8$ রেখাদ্বয়ের অন্তর্ভুক্ত কোণের সমদ্বিখণ্ডকদ্বয় পরস্পর লম্ব।",
+                boards: "কুমিল্লা বোর্ড-২০২৩ এর সৃজনশীল-৫(ঘ)",
+                solution: {
+                    steps: [
+                        "সমদ্বিখণ্ডকদ্বয়: $x + y + 20 = 0$ (ঢাল $-1$) এবং $7x - 7y + 4 = 0$ (ঢাল $1$)",
+                        "ঢালদ্বয়ের গুণফল $= (-1)(1) = -1 \\implies$ **পরস্পর লম্ব।** (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/><line x1="20" y1="100" x2="180" y2="20" stroke="#0ea5e9" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xxi", type: "V", no: "9. (xxi)",
+                question: "$4x + 3y + 2 = 0$ এবং $12x + 5y + 13 = 0$ রেখা দুইটির অন্তর্ভুক্ত যে কোণটি মূলবিন্দু ধারণ করে তার সমদ্বিখণ্ডকের সমীকরণ নির্ণয় কর।",
+                boards: "সাধারণ অনুশীলনী",
+                solution: {
+                    steps: [
+                        "মূলবিন্দু ধারণকারী কোণের সমদ্বিখণ্ডক: $\\frac{4x + 3y + 2}{5} = +\\frac{12x + 5y + 13}{13}$",
+                        "$13(4x + 3y + 2) = 5(12x + 5y + 13) \\implies 8x + 14y - 39 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "9_xxii", type: "V", no: "9. (xxii)",
+                question: "$3x + 4y = 11$ এবং $12x - 5y - 2 = 0$ রেখা দুইটির অন্তর্ভুক্ত সূক্ষ্মকোণের সমদ্বিখণ্ডকের সমীকরণ নির্ণয় কর।",
+                boards: "বি: বো: ০৯; সি: বো: ১৫; কুয়েট: ০৬-০৭; চুয়েট: ১৩-১৪, ০৭-০৮",
+                solution: {
+                    steps: [
+                        "সূক্ষ্মকোণের সমদ্বিখণ্ডক: $\\frac{3x + 4y - 11}{5} = \\frac{-12x + 5y + 2}{13} \\implies 11x + 3y - 17 = 0$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><line x1="20" y1="20" x2="180" y2="100" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+
+            // ==================== TYPE VI ====================
+            {
+                id: "10_i", type: "VI", no: "10. (i)",
+                question: "$4x + 3y = 12, 3x - 4y + 16 = 0, 4x - 3y = 12$ রেখাত্রয় দ্বারা গঠিত ত্রিভুজের অন্তঃকেন্দ্র নির্ণয় কর।",
+                boards: "যশোর বোর্ড-২০২১ এর সৃজনশীল-৪(ঘ)",
+                solution: {
+                    steps: [
+                        "শীর্ষত্রয়: $A(0, 4), B(-3, 0), C(3, 0)$",
+                        "বাহুর দৈর্ঘ্য: $a = 6, b = 5, c = 5$",
+                        "অন্তঃকেন্দ্র $I = \\left(\\frac{6(0) + 5(-3) + 5(3)}{16}, \\frac{6(4) + 5(0) + 5(0)}{16}\\right) = \\left(0, \\frac{3}{2}\\right)$"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><polygon points="100,20 30,100 170,100" fill="none" stroke="#4f46e5" stroke-width="2"/><circle cx="100" cy="70" r="3" fill="#ef4444"/><text x="105" y="70" font-size="10">I(0, 3/2)</text></svg>`
+                }
+            },
+            {
+                id: "10_ii", type: "VI", no: "10. (ii)",
                 question: "$(0, 0), (-22, -11), (-1, 3)$ শীর্ষবিশিষ্ট ত্রিভুজের লম্বকেন্দ্র নির্ণয় কর।",
                 boards: "সিলেটে বোর্ড-০৫",
                 solution: {
                     steps: [
-                        "ধরি $O(0, 0), A(-22, -11), B(-1, 3)$। লম্বকেন্দ্র $H(x, y)$।",
-                        "$OA$ রেখার ঢাল $m_{OA} = \\frac{-11 - 0}{-22 - 0} = \\frac{1}{2}$",
-                        "$BH \\perp OA$ হওয়ায় $BH$ রেখার ঢাল $= -2$",
-                        "$BH$ রেখার সমীকরণ: $y - 3 = -2(x + 1) \\implies 2x + y - 1 = 0 \\quad \\text{--- (1)}$",
-                        "$OB$ রেখার ঢাল $m_{OB} = \\frac{3 - 0}{-1 - 0} = -3 \\implies AH$ রেখার ঢাল $= \\frac{1}{3}$",
-                        "$AH$ রেখার সমীকরণ: $y + 11 = \\frac{1}{3}(x + 22) \\implies x - 3y - 11 = 0 \\quad \\text{--- (2)}$",
-                        "(1) ও (2) সমাধান করে পাই: $x = 2, y = -3$",
-                        "**নির্ণেয় লম্বকেন্দ্র:** $(2, -3)$"
+                        "শীর্ষত্রয় $O(0, 0), A(-22, -11), B(-1, 3)$",
+                        "$BH \\perp OA \\implies 2x + y - 1 = 0$",
+                        "$AH \\perp OB \\implies x - 3y - 11 = 0$",
+                        "সমাধান করে **লম্বকেন্দ্র $H(2, -3)$**"
                     ],
-                    svg: `
-                        <svg viewBox="-10 -10 220 170" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900">
-                            <!-- Triangle -->
-                            <polygon points="180,20 20,130 140,10" fill="none" stroke="#4f46e5" stroke-width="2" />
-                            <!-- Altitudes -->
-                            <line x1="140" y1="10" x2="100" y2="75" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3" />
-                            <line x1="20" y1="130" x2="160" y2="15" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3" />
-
-                            <!-- Orthocenter H -->
-                            <circle cx="108" cy="40" r="4" fill="#ef4444" />
-                            <text x="115" y="45" fill="#ef4444" font-size="11" font-weight="bold">H(2, -3)</text>
-                        </svg>
-                    `
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><polygon points="100,20 30,100 170,100" fill="none" stroke="#4f46e5" stroke-width="2"/><circle cx="100" cy="50" r="3" fill="#ef4444"/><text x="105" y="55" font-size="10">H(2,-3)</text></svg>`
+                }
+            },
+            {
+                id: "10_iii", type: "VI", no: "10. (iii)",
+                question: "$ABC$ ত্রিভুজের দুইটি শীর্ষবিন্দু যথাক্রমে $A(6, 1)$ ও $B(1, 6)$ এবং এর লম্বকেন্দ্র $P(3, 2)$। অবশিষ্ট শীর্ষ $C$ এর স্থানাঙ্ক নির্ণয় কর।",
+                boards: "ঢা: বো: ০৮",
+                solution: {
+                    steps: [
+                        "$BC \\perp AP \\implies 3x - y + 3 = 0$",
+                        "$AC \\perp BP \\implies x - 2y - 4 = 0$",
+                        "ছেদবিন্দু নির্ণয় করে **$C(-2, -3)$**"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><polygon points="100,20 30,100 170,100" fill="none" stroke="#4f46e5" stroke-width="2"/></svg>`
+                }
+            },
+            {
+                id: "10_iv", type: "VI", no: "10. (iv)",
+                question: "$(0, 0), (0, 3)$ ও $(4, 0)$ শীর্ষবিশিষ্ট ত্রিভুজের কোণসমূহের অন্তর্ধিখণ্ডক নির্ণয় কর এবং দেখাও যে, তারা সমবিন্দু। বিন্দুটির স্থানাঙ্ক নির্ণয় কর।",
+                boards: "ঢা: বো: ০৪; কু: বো: ১০; সি: বো: ১১",
+                solution: {
+                    steps: [
+                        "শীর্ষত্রয় $(0,0), (0,3), (4,0)$, বাহুর দৈর্ঘ্য $a = 5, b = 4, c = 3$",
+                        "অন্তঃকেন্দ্র $I = \\left(\\frac{12}{12}, \\frac{12}{12}\\right) = (1, 1)$",
+                        "সকল সমদ্বিখণ্ডক $(1, 1)$ বিন্দুগামী। (প্রমাণিত)"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><polygon points="20,100 20,20 180,100" fill="none" stroke="#4f46e5" stroke-width="2"/><circle cx="50" cy="80" r="3" fill="#ef4444"/></svg>`
+                }
+            },
+            {
+                id: "10_v", type: "VI", no: "10. (v)",
+                question: "$A(-3, 0), B(3, 0)$ ও $C(6, 6)$ বিন্দু তিনটি $ABC$ ত্রিভুজের শীর্ষবিন্দু। ত্রিভুজটির পরিকেন্দ্র নির্ণয় কর।",
+                boards: "সাধারণ অনুশীলনী",
+                solution: {
+                    steps: [
+                        "পরিকেন্দ্র $S(x, y)$ হলে $SA^2 = SB^2 \\implies x = 0$",
+                        "$SB^2 = SC^2 \\implies 9 + y^2 = 36 + (y-6)^2 \\implies 12y = 63 \\implies y = \\frac{21}{4}$",
+                        "**পরিকেন্দ্র $S\\left(0, \\frac{21}{4}\\right)$**"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><polygon points="100,20 30,100 170,100" fill="none" stroke="#4f46e5" stroke-width="2"/><circle cx="100" cy="60" r="3" fill="#ef4444"/></svg>`
+                }
+            },
+            {
+                id: "10_vi", type: "VI", no: "10. (vi)",
+                question: "$PQR$ ত্রিভুজের $P(5, 1), Q(1, 5)$ ও লম্বকেন্দ্র $C(3, 2)$ হলে তার ক্ষেত্রফল নির্ণয় কর।",
+                boards: "রাজশাহী বোর্ড-২০১৯ এর সৃজনশীল-৩(ঘ)",
+                solution: {
+                    steps: [
+                        "$RC \\perp PQ \\implies x - y - 1 = 0$",
+                        "$QR \\perp PC \\implies 2x - y + 3 = 0$",
+                        "ছেদবিন্দু $R(-4, -5)$",
+                        "$\\Delta PQR$ এর ক্ষেত্রফল $= 30$ বর্গ একক।"
+                    ],
+                    svg: `<svg viewBox="0 0 200 120" class="w-full max-w-sm mx-auto my-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900"><polygon points="100,20 30,100 170,100" fill="none" stroke="#4f46e5" stroke-width="2"/></svg>`
                 }
             }
         ];
 
-        // App State
-        let bookmarks = JSON.parse(localStorage.getItem('bookmarks_math3g') || '[]');
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks_math3g_all_v2') || '[]');
         let practiceMode = false;
         let currentType = 'all';
 
-        // Render UI
         function render() {
             const listContainer = document.getElementById('problemList');
             const searchVal = document.getElementById('searchInput').value.toLowerCase();
-            
             listContainer.innerHTML = '';
 
             const filtered = problemsData.filter(p => {
                 const matchesType = currentType === 'all' || p.type === currentType;
-                const matchesSearch = p.question.toLowerCase().includes(searchVal) ||
+                const matchesSearch = p.question.toLowerCase().includes(searchVal) || 
                                       p.boards.toLowerCase().includes(searchVal) ||
                                       p.no.toLowerCase().includes(searchVal);
                 return matchesType && matchesSearch;
@@ -373,8 +923,7 @@
             filtered.forEach(p => {
                 const isBookmarked = bookmarks.includes(p.id);
                 const card = document.createElement('div');
-                card.className = "bg-white dark:bg-slate-800 rounded-xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 space-y-4 transition hover:shadow-md";
-
+                card.className = "bg-white dark:bg-slate-800 rounded-xl p-5 shadow-sm border border-slate-200 dark:border-slate-700 space-y-4";
                 card.innerHTML = `
                     <div class="flex items-start justify-between gap-4">
                         <div class="flex items-center gap-2">
@@ -385,80 +934,56 @@
                             <i data-lucide="bookmark" class="w-5 h-5 ${isBookmarked ? 'fill-amber-500' : ''}"></i>
                         </button>
                     </div>
-
                     <div class="text-slate-900 dark:text-slate-100 font-semibold text-base leading-relaxed">
                         <span class="text-brand-600 dark:text-brand-400">${p.no}</span> ${p.question}
                     </div>
-
                     <div class="solution-container ${practiceMode ? 'hidden' : ''} border-t border-slate-100 dark:border-slate-700/60 pt-4 space-y-3">
                         <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
                             <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i> বিস্তারিত সমাধান ও চিত্র
                         </h4>
-                        
                         ${p.solution.svg}
-
                         <div class="space-y-1.5 text-sm text-slate-700 dark:text-slate-300">
-                            ${p.solution.steps.map(step => `<p class="leading-relaxed">${step}</p>`).join('')}
+                            ${p.solution.steps.map(s => `<p class="leading-relaxed">${s}</p>`).join('')}
                         </div>
                     </div>
                 `;
-
                 listContainer.appendChild(card);
             });
 
-            // Trigger KaTeX rendering
             renderMathInElement(listContainer, {
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false}
-                ],
+                delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}],
                 throwOnError: false
             });
-
             lucide.createIcons();
         }
 
-        // Bookmark Toggle
         window.toggleBookmark = function(id) {
-            if (bookmarks.includes(id)) {
-                bookmarks = bookmarks.filter(b => b !== id);
-            } else {
-                bookmarks.push(id);
-            }
-            localStorage.setItem('bookmarks_math3g', JSON.stringify(bookmarks));
+            bookmarks = bookmarks.includes(id) ? bookmarks.filter(b => b !== id) : [...bookmarks, id];
+            localStorage.setItem('bookmarks_math3g_all_v2', JSON.stringify(bookmarks));
             render();
         }
 
-        // Filtering Listeners
         document.querySelectorAll('.type-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
+            btn.addEventListener('click', () => {
                 document.querySelectorAll('.type-btn').forEach(b => {
                     b.classList.remove('bg-brand-600', 'text-white');
                     b.classList.add('text-slate-600', 'dark:text-slate-300');
                 });
                 btn.classList.add('bg-brand-600', 'text-white');
                 btn.classList.remove('text-slate-600', 'dark:text-slate-300');
-                
                 currentType = btn.dataset.type;
                 render();
             });
         });
 
         document.getElementById('searchInput').addEventListener('input', render);
-
-        // Practice Mode Toggle
         document.getElementById('togglePracticeBtn').addEventListener('click', () => {
             practiceMode = !practiceMode;
             document.getElementById('practiceBtnText').innerText = practiceMode ? "সমাধান দেখান" : "অনুশীলন মোড (সমাধান লুকান)";
             render();
         });
+        document.getElementById('darkToggleBtn').addEventListener('click', () => document.documentElement.classList.toggle('dark'));
 
-        // Dark Mode Toggle
-        document.getElementById('darkToggleBtn').addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-        });
-
-        // Initialize App
         render();
     </script>
 </body>
